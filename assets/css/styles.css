@@ -8,6 +8,7 @@
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
@@ -44,7 +45,9 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  max-width: 531px;
+  /* min-height: 100vh; */
+  margin: 0 auto;
   padding: 90px 0 80px;
 }
 
@@ -58,7 +61,7 @@ ul {
 .infoarea {
   display: flex;
   flex-direction: column;
-  width: 531px;
+  width: 100%;
   height: auto;
 }
 
