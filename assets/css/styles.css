@@ -9,8 +9,34 @@
 
 body {
   min-height: 100vh;
-  font-family: sans-serif;
-  background-color: #f0f0f0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  color: #111111;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 /* page layout — flexbox 조립 */
@@ -20,9 +46,10 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  padding: 90px 0 80px;
 }
 
-/* 공통 와이어프레임 영역 */
+/* 공통 영역 사이즈: 531 x auto */
 .hero,
 .survey1,
 .survey2,
@@ -32,46 +59,358 @@ body {
 .infoarea {
   display: flex;
   flex-direction: column;
+  width: 531px;
+  height: auto;
+}
+
+/* ---------- 공통 부품 ---------- */
+.section-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #111111;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 1.4;
+}
+
+.section-title--with-icon {
+  gap: 4px;
+}
+
+.section-title--memo {
+  margin-bottom: 17px;
+  padding-bottom: 10px;
+}
+
+.icon-info {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.icon-info--inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.field + .field {
+  margin-top: 20px;
+}
+
+.field__label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.field__label--with-icon {
+  gap: 4px;
+}
+
+.field__value {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.field__value--readonly {
+  background-color: #f5f5f5;
+  color: #111111;
+}
+
+.field__value--zip {
+  flex: 1;
+  min-width: 0;
+}
+
+.field__value--grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.field__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.field__row + .field__value,
+.field__value + .field__value {
+  margin-top: 0;
+}
+
+.btn-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #111111;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.26px;
+  white-space: nowrap;
+}
+
+/* ---------- hero (531 x 229) ---------- */
+.hero {
+  align-items: center;
+  height: 229px;
+  margin-bottom: 35px;
+}
+
+.hero__logo {
+  display: block;
+  width: 131px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.hero__title {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.64px;
+  line-height: 38.4px;
+  text-align: center;
+  color: #111111;
+}
+
+.hero__desc {
+  margin-top: 25px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  text-align: center;
+  color: #111111;
+}
+
+.hero__policy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 24px;
+  color: #999999;
+}
+
+.hero__policy-arrow {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid #999999;
+  border-right: 1.5px solid #999999;
+  transform: rotate(45deg);
+  margin-top: 1px;
+}
+
+/* ---------- survey1 (531 x 262) ---------- */
+.survey1 {
+  min-height: 262px;
+  margin-bottom: 21px;
+  padding-top: 4px;
+}
+
+/* ---------- survey2 (531 x 500) ---------- */
+.survey2 {
+  min-height: 500px;
+  margin-bottom: 32px;
+}
+
+.phone-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+.phone-group__prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  flex-shrink: 0;
+  border-right: 1px solid #dddddd;
+}
+
+.phone-group__select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 32px 0 14px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.phone-group__arrow {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.phone-group__input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  padding: 0 14px;
+  border: none;
+  border-right: 1px solid #dddddd;
+  background: transparent;
+  text-align: center;
+  font-size: 14px;
+}
+
+.phone-group__input:last-child {
+  border-right: none;
+}
+
+.phone-group__input:focus,
+.phone-group__select:focus {
+  outline: none;
+}
+
+/* ---------- survey3 (531 x 257) ---------- */
+.survey3 {
+  min-height: 257px;
+  margin-bottom: 17px;
+}
+
+.select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+.select-wrap__select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px 0 14px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select-wrap__select:focus {
+  outline: none;
+}
+
+.select-wrap__arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+/* ---------- survey4 (531 x 225) ---------- */
+.survey4 {
+  min-height: 225px;
+  margin-bottom: 50px;
+}
+
+.memo-textarea {
+  width: 530px;
+  height: 171px;
+  padding: 13px 15px;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  resize: none;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 24px;
+  color: #111111;
+}
+
+.memo-textarea::placeholder {
+  color: #999999;
+}
+
+.memo-textarea:focus {
+  outline: none;
+}
+
+/* ---------- btnarea (531 x 51) ---------- */
+.btnarea {
+  height: 51px;
+  margin-bottom: 22px;
+}
+
+.btn-confirm {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 531px;
-  height: auto;
-  min-height: 80px;
-  border: 1px dashed #999;
-  background-color: #fff;
+  height: 51px;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
 }
 
-.wire-label {
-  font-size: 14px;
-  color: #666;
-  letter-spacing: 0.02em;
-}
-
-/* 독립 부품 — 영역별 식별용 배경 */
-.hero {
-  background-color: #e8e8e8;
-}
-
-.survey1 {
-  background-color: #f5f5f5;
-}
-
-.survey2 {
-  background-color: #e8e8e8;
-}
-
-.survey3 {
-  background-color: #f5f5f5;
-}
-
-.survey4 {
-  background-color: #e8e8e8;
-}
-
-.btnarea {
-  background-color: #f5f5f5;
-}
-
+/* ---------- infoarea (531 x 69) ---------- */
 .infoarea {
-  background-color: #e8e8e8;
+  min-height: 69px;
+  justify-content: center;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.info-list li {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666666;
 }
