@@ -1,0 +1,77 @@
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* page layout — flexbox 조립 */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 공통 와이어프레임 영역 */
+.hero,
+.survey1,
+.survey2,
+.survey3,
+.survey4,
+.btnarea,
+.infoarea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 531px;
+  height: auto;
+  min-height: 80px;
+  border: 1px dashed #999;
+  background-color: #fff;
+}
+
+.wire-label {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+
+/* 독립 부품 — 영역별 식별용 배경 */
+.hero {
+  background-color: #e8e8e8;
+}
+
+.survey1 {
+  background-color: #f5f5f5;
+}
+
+.survey2 {
+  background-color: #e8e8e8;
+}
+
+.survey3 {
+  background-color: #f5f5f5;
+}
+
+.survey4 {
+  background-color: #e8e8e8;
+}
+
+.btnarea {
+  background-color: #f5f5f5;
+}
+
+.infoarea {
+  background-color: #e8e8e8;
+}
