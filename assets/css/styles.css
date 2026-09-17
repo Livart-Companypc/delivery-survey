@@ -45,10 +45,18 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 531px;
+  min-width: 320px;
+  max-width: 530px;
   /* min-height: 100vh; */
   margin: 0 auto;
   padding: 90px 0 80px;
+}
+
+@media (max-width: 530px) {
+  .page {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 /* 공통 영역 사이즈: 531 x auto */
@@ -227,9 +235,10 @@ ul {
 .phone-group {
   display: flex;
   align-items: stretch;
+  gap: 8px;
   width: 100%;
   height: 44px;
-  border: 1px solid #dddddd;
+  /* border: 1px solid #dddddd; */
   background-color: #ffffff;
 }
 
@@ -238,7 +247,7 @@ ul {
   align-items: center;
   width: 100px;
   flex-shrink: 0;
-  border-right: 1px solid #dddddd;
+  border: 1px solid #dddddd;
 }
 
 .phone-group__select {
@@ -269,15 +278,10 @@ ul {
   min-width: 0;
   height: 100%;
   padding: 0 14px;
-  border: none;
-  border-right: 1px solid #dddddd;
+  border: 1px solid #dddddd;
   background: transparent;
   text-align: center;
   font-size: 14px;
-}
-
-.phone-group__input:last-child {
-  border-right: none;
 }
 
 .phone-group__input:focus,
@@ -333,7 +337,8 @@ ul {
 }
 
 .memo-textarea {
-  width: 530px;
+  width: 100%;
+  max-width: 530px;
   height: 171px;
   padding: 13px 15px;
   border: 1px solid #eeeeee;
@@ -364,7 +369,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 531px;
+  width: 100%;
+  max-width: 531px;
   height: 51px;
   background-color: #333333;
   color: #ffffff;
