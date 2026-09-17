@@ -133,8 +133,13 @@ ul {
   width: 100%;
   min-height: 44px;
   padding: 0 14px;
+  border: none;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.field__value:focus {
+  outline: none;
 }
 
 .field__value--readonly {

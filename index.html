@@ -1,142 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>배달 설문조사</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <main class="page">
-    <!-- hero -->
-    <section class="hero" aria-label="hero">
-      <img
-        class="hero__logo"
-        src="assets/images/logo@2x.png"
-        alt="LIVART 리바트"
-        width="131"
-        height="45"
-      >
-      <h1 class="hero__title">배송 확정 페이지</h1>
-      <p class="hero__desc">
-        원활한 배송을 위해 배송 정보를 확정해주세요.<br>
-        수정이 필요하신 경우 수정 버튼을 눌러 수정해주세요.
-      </p>
-      <a class="hero__policy" href="#">배송 정책 자세히보기 &gt;</a>
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배달 설문조사</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- hero -->
+      <section class="hero" aria-label="hero">
+        <img
+          class="hero__logo"
+          src="assets/images/logo@2x.png"
+          alt="LIVART 리바트"
+          width="131"
+          height="45"
+        />
+        <h1 class="hero__title">배송 확정 페이지</h1>
+        <p class="hero__desc">
+          원활한 배송을 위해 배송 정보를 확정해주세요.<br />
+          수정이 필요하신 경우 수정 버튼을 눌러 수정해주세요.
+        </p>
+        <a class="hero__policy" href="#">배송 정책 자세히보기 &gt;</a>
+      </section>
 
-    <!-- survey1: 기본 정보 -->
-    <section class="survey1" aria-label="survey1">
-      <h2 class="section-title">1. 기본 정보</h2>
-      <div class="field">
-        <label class="field__label">고객명</label>
-        <div class="field__value field__value--readonly">홍길동</div>
-      </div>
-      <div class="field">
-        <label class="field__label">구매품목</label>
-        <div class="field__value field__value--readonly">세트코드</div>
-      </div>
-    </section>
-
-    <!-- survey2: 배송 정보 -->
-    <section class="survey2" aria-label="survey2">
-      <h2 class="section-title section-title--with-icon">
-        2. 배송 정보
-        <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
-      </h2>
-
-      <div class="field">
-        <label class="field__label">주소</label>
-        <div class="field__row">
-          <div class="field__value field__value--readonly field__value--zip">07431</div>
-          <button type="button" class="btn-edit">수정하기</button>
+      <!-- survey1: 기본 정보 -->
+      <section class="survey1" aria-label="survey1">
+        <h2 class="section-title">1. 기본 정보</h2>
+        <div class="field">
+          <label class="field__label">고객명</label>
+          <input
+            class="field__value field__value--readonly"
+            type="text"
+            value="홍길동"
+          />
         </div>
-        <div class="field__value field__value--readonly">서울 강남구 압구정동 압구정로 201</div>
-        <div class="field__value field__value--readonly">3층</div>
-      </div>
+        <div class="field">
+          <label class="field__label">구매품목</label>
+          <input
+            class="field__value field__value--readonly"
+            type="text"
+            value="세트코드"
+          />
+        </div>
+      </section>
 
-      <div class="field">
-        <label class="field__label">휴대폰번호</label>
-        <div class="phone-group">
-          <div class="phone-group__prefix">
-            <select class="phone-group__select" aria-label="휴대폰 앞자리">
-              <option value="010" selected>010</option>
-            </select>
-            <img class="phone-group__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
+      <!-- survey2: 배송 정보 -->
+      <section class="survey2" aria-label="survey2">
+        <h2 class="section-title section-title--with-icon">
+          2. 배송 정보
+          <img
+            class="icon-info"
+            src="assets/svg/i.svg"
+            alt=""
+            width="22"
+            height="22"
+          />
+        </h2>
+
+        <div class="field">
+          <label class="field__label">주소</label>
+          <div class="field__row">
+            <input
+              class="field__value field__value--readonly field__value--zip"
+              type="text"
+              value="07431"
+            />
+            <button type="button" class="btn-edit">수정하기</button>
           </div>
-          <input class="phone-group__input" type="text" inputmode="numeric" maxlength="4" aria-label="휴대폰 중간번호">
-          <input class="phone-group__input" type="text" inputmode="numeric" maxlength="4" aria-label="휴대폰 끝번호">
+          <input
+            class="field__value field__value--readonly"
+            type="text"
+            value="서울 강남구 압구정동 압구정로 201"
+          />
+          <input
+            class="field__value field__value--readonly"
+            type="text"
+            value="3층"
+          />
         </div>
-      </div>
 
-      <div class="field">
-        <label class="field__label field__label--with-icon">
-          배송일시
-          <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
-        </label>
-        <div class="field__row">
-          <div class="field__value field__value--readonly field__value--grow">2026-00-00, 오전 9:00~12:00</div>
-          <button type="button" class="btn-edit">수정하기</button>
+        <div class="field">
+          <label class="field__label">휴대폰번호</label>
+          <div class="phone-group">
+            <div class="phone-group__prefix">
+              <select class="phone-group__select" aria-label="휴대폰 앞자리">
+                <option value="010" selected>010</option>
+              </select>
+              <img
+                class="phone-group__arrow"
+                src="assets/svg/arrow-down.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </div>
+            <input
+              class="phone-group__input"
+              type="text"
+              inputmode="numeric"
+              maxlength="4"
+              aria-label="휴대폰 중간번호"
+            />
+            <input
+              class="phone-group__input"
+              type="text"
+              inputmode="numeric"
+              maxlength="4"
+              aria-label="휴대폰 끝번호"
+            />
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- survey3: 추가 정보 -->
-    <section class="survey3" aria-label="survey3">
-      <h2 class="section-title section-title--with-icon">
-        3. 추가 정보
-        <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
-      </h2>
-
-      <div class="field">
-        <label class="field__label" for="entry-equipment">진입 장비</label>
-        <div class="select-wrap">
-          <select id="entry-equipment" class="select-wrap__select">
-            <option value="elevator" selected>엘리베이터</option>
-          </select>
-          <img class="select-wrap__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
+        <div class="field">
+          <label class="field__label field__label--with-icon">
+            배송일시
+            <img
+              class="icon-info"
+              src="assets/svg/i.svg"
+              alt=""
+              width="22"
+              height="22"
+            />
+          </label>
+          <div class="field__row">
+            <input
+              class="field__value field__value--readonly field__value--grow"
+              type="text"
+              value="2026-00-00, 오전 9:00~12:00"
+            />
+            <button type="button" class="btn-edit">수정하기</button>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="field">
-        <label class="field__label field__label--with-icon" for="extra-work">
-          추가 작업
-          <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
-        </label>
-        <div class="select-wrap">
-          <select id="extra-work" class="select-wrap__select">
-            <option value="none" selected>없음</option>
-          </select>
-          <img class="select-wrap__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
+      <!-- survey3: 추가 정보 -->
+      <section class="survey3" aria-label="survey3">
+        <h2 class="section-title section-title--with-icon">
+          3. 추가 정보
+          <img
+            class="icon-info"
+            src="assets/svg/i.svg"
+            alt=""
+            width="22"
+            height="22"
+          />
+        </h2>
+
+        <div class="field">
+          <label class="field__label" for="entry-equipment">진입 장비</label>
+          <div class="select-wrap">
+            <select id="entry-equipment" class="select-wrap__select">
+              <option value="elevator" selected>엘리베이터</option>
+            </select>
+            <img
+              class="select-wrap__arrow"
+              src="assets/svg/arrow-down.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- survey4: 배송메모 -->
-    <section class="survey4" aria-label="survey4">
-      <h2 class="section-title section-title--memo">4. 배송메모</h2>
-      <textarea
-        class="memo-textarea"
-        maxlength="50"
-        placeholder="배송 메모를 자유롭게 등록해주세요.(50자 이내)&#10;예시) 출발 전 전화 부탁드립니다. / 반려동물 주의 부탁드립니다."
-      ></textarea>
-    </section>
+        <div class="field">
+          <label class="field__label field__label--with-icon" for="extra-work">
+            추가 작업
+            <img
+              class="icon-info"
+              src="assets/svg/i.svg"
+              alt=""
+              width="22"
+              height="22"
+            />
+          </label>
+          <div class="select-wrap">
+            <select id="extra-work" class="select-wrap__select">
+              <option value="none" selected>없음</option>
+            </select>
+            <img
+              class="select-wrap__arrow"
+              src="assets/svg/arrow-down.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+          </div>
+        </div>
+      </section>
 
-    <!-- btnarea -->
-    <section class="btnarea" aria-label="btnarea">
-      <button type="button" class="btn-confirm">배송 확정</button>
-    </section>
+      <!-- survey4: 배송메모 -->
+      <section class="survey4" aria-label="survey4">
+        <h2 class="section-title section-title--memo">4. 배송메모</h2>
+        <textarea
+          class="memo-textarea"
+          maxlength="50"
+          placeholder="배송 메모를 자유롭게 등록해주세요.(50자 이내)&#10;예시) 출발 전 전화 부탁드립니다. / 반려동물 주의 부탁드립니다."
+        ></textarea>
+      </section>
 
-    <!-- infoarea -->
-    <section class="infoarea" aria-label="infoarea">
-      <ul class="info-list">
-        <li>* 배송 취소를 원하시는 경우 상담실로 문의 바랍니다.</li>
-        <li class="info-list__item">
-          <span>* 요일 배송제에 따라 일부 지역은 특정 요일에만 배송이 가능합니다.</span>
-          <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
-        </li>
-      </ul>
-    </section>
-  </main>
-</body>
+      <!-- btnarea -->
+      <section class="btnarea" aria-label="btnarea">
+        <button type="button" class="btn-confirm">배송 확정</button>
+      </section>
+
+      <!-- infoarea -->
+      <section class="infoarea" aria-label="infoarea">
+        <ul class="info-list">
+          <li>* 배송 취소를 원하시는 경우 상담실로 문의 바랍니다.</li>
+          <li class="info-list__item">
+            <span
+              >* 요일 배송제에 따라 일부 지역은 특정 요일에만 배송이
+              가능합니다.</span
+            >
+            <img
+              class="icon-info"
+              src="assets/svg/i.svg"
+              alt=""
+              width="22"
+              height="22"
+            />
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>
