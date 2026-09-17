@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>배달 설문조사</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -25,10 +22,7 @@
         원활한 배송을 위해 배송 정보를 확정해주세요.<br>
         수정이 필요하신 경우 수정 버튼을 눌러 수정해주세요.
       </p>
-      <a class="hero__policy" href="#">
-        <span>배송 정책 자세히보기</span>
-        <span class="hero__policy-arrow" aria-hidden="true"></span>
-      </a>
+      <a class="hero__policy" href="#">배송 정책 자세히보기 &gt;</a>
     </section>
 
     <!-- survey1: 기본 정보 -->
@@ -67,11 +61,6 @@
           <div class="phone-group__prefix">
             <select class="phone-group__select" aria-label="휴대폰 앞자리">
               <option value="010" selected>010</option>
-              <option value="011">011</option>
-              <option value="016">016</option>
-              <option value="017">017</option>
-              <option value="018">018</option>
-              <option value="019">019</option>
             </select>
             <img class="phone-group__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
           </div>
@@ -104,8 +93,6 @@
         <div class="select-wrap">
           <select id="entry-equipment" class="select-wrap__select">
             <option value="elevator" selected>엘리베이터</option>
-            <option value="stairs">계단</option>
-            <option value="ladder">사다리차</option>
           </select>
           <img class="select-wrap__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
         </div>
@@ -119,8 +106,6 @@
         <div class="select-wrap">
           <select id="extra-work" class="select-wrap__select">
             <option value="none" selected>없음</option>
-            <option value="assembly">조립</option>
-            <option value="disposal">폐기</option>
           </select>
           <img class="select-wrap__arrow" src="assets/svg/arrow-down.svg" alt="" width="24" height="24">
         </div>
@@ -146,9 +131,9 @@
     <section class="infoarea" aria-label="infoarea">
       <ul class="info-list">
         <li>* 배송 취소를 원하시는 경우 상담실로 문의 바랍니다.</li>
-        <li>
-          * 요일 배송제에 따라 일부 지역은 특정 요일에만 배송이 가능합니다.
-          <img class="icon-info icon-info--inline" src="assets/svg/i.svg" alt="" width="22" height="22">
+        <li class="info-list__item">
+          <span>* 요일 배송제에 따라 일부 지역은 특정 요일에만 배송이 가능합니다.</span>
+          <img class="icon-info" src="assets/svg/i.svg" alt="" width="22" height="22">
         </li>
       </ul>
     </section>
