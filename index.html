@@ -135,13 +135,31 @@
               height="22"
             />
           </label>
-          <div class="field__row">
+          <div class="field__row field__row--delivery">
             <input
-              class="field__value field__value--readonly field__value--grow"
-              type="text"
-              value="2026-00-00, 오전 9:00~12:00"
+              class="field__value field__value--date"
+              type="date"
+              aria-label="배송일"
             />
-            <button type="button" class="btn-edit">수정하기</button>
+            <div class="select-wrap select-wrap--delivery">
+              <select
+                id="delivery-slot"
+                class="select-wrap__select"
+                aria-label="배송 시간대"
+              >
+                <option value="am" selected>오전</option>
+                <option value="pm-a">오후A</option>
+                <option value="pm-b">오후B</option>
+                <option value="after-work">퇴근배송</option>
+              </select>
+              <img
+                class="select-wrap__arrow"
+                src="assets/svg/arrow-down.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+            </div>
           </div>
         </div>
       </section>
