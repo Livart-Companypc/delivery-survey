@@ -256,6 +256,41 @@
         </ul>
       </section>
     </main>
+    <div
+      class="popup is-open"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popup-title"
+    >
+      <div class="popup__panel">
+        <div class="popup__header">
+          <div class="popup__header-side" aria-hidden="true"></div>
+          <h2 id="popup-title" class="popup__title">배송일 지정 관련 안내</h2>
+          <div class="popup__header-side popup__header-side--end">
+            <button type="button" class="popup__close" aria-label="닫기">
+              ×
+            </button>
+          </div>
+        </div>
+        <div class="popup__body">
+          <p class="popup__headline">
+            내 가구는 내가 원하는 시간대에, 맞춤배송
+          </p>
+          <ul class="popup__list">
+            <li>
+              · 고객님이 직접 희망 배송일과 배송시간대를 지정할 수 있습니다.
+            </li>
+            <li>
+              · 주문 결제 단계에서 희망 배송일 달력에 원하는 배송일과
+              배송시간대를 체크해주시면 됩니다.
+            </li>
+          </ul>
+        </div>
+        <div class="popup__footer">
+          <button type="button" class="popup__confirm">확인</button>
+        </div>
+      </div>
+    </div>
     <script src="assets/js/func.js"></script>
   </body>
 </html>
