@@ -198,11 +198,39 @@
     });
   }
 
+  function initDeliveryDateInput() {
+    var dateWrap = document.querySelector(".date-wrap");
+    var dateInput = document.querySelector(".field__value--date");
+    if (!dateWrap || !dateInput) return;
+
+    function activate() {
+      dateWrap.classList.add("date-wrap--active");
+    }
+
+    function deactivate() {
+      dateWrap.classList.remove("date-wrap--active");
+    }
+
+    dateInput.addEventListener("focus", activate);
+    dateInput.addEventListener("click", activate);
+    dateInput.addEventListener("cancel", deactivate);
+
+    document.addEventListener("focusin", function (event) {
+      if (dateWrap.contains(event.target)) {
+        activate();
+        return;
+      }
+
+      deactivate();
+    });
+  }
+
   function init() {
     initAddressEditButton();
     initTooltips();
     initSelectOptions();
     initMemoTextarea();
+    initDeliveryDateInput();
   }
 
   if (document.readyState === "loading") {
