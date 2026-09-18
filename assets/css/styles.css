@@ -24,6 +24,12 @@ textarea {
   color: inherit;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #333333;
+}
+
 button {
   cursor: pointer;
   background: none;
@@ -140,6 +146,7 @@ ul {
 
 .field__value:focus {
   outline: none;
+  border: 1px solid #333333;
 }
 
 .field__value--readonly {
@@ -302,6 +309,7 @@ ul {
 .phone-group__input:focus,
 .phone-group__select:focus {
   outline: none;
+  border: 1px solid #333333;
 }
 
 /* ---------- survey3 (531 x 257) ---------- */
@@ -335,6 +343,10 @@ ul {
 
 .select-wrap__select:focus {
   outline: none;
+}
+
+.select-wrap:has(.select-wrap__select:focus) {
+  border: 1px solid #333333;
 }
 
 .select-wrap__arrow {
@@ -377,6 +389,75 @@ ul {
 
 .memo-textarea:focus {
   outline: none;
+  border: 1px solid #333333;
+}
+
+.phone-group__prefix:has(.phone-group__select:focus) {
+  border: 1px solid #333333;
+}
+
+/* info-desc tooltip */
+.info-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.info-tooltip .icon-info {
+  cursor: pointer;
+}
+
+.info-desc {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+  z-index: 100;
+  min-width: 200px;
+  max-width: 280px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.26px;
+  color: #666666;
+  white-space: pre-line;
+  text-align: left;
+  pointer-events: none;
+}
+
+.info-desc::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.info-tooltip--active .info-desc,
+.info-tooltip:hover .info-desc {
+  display: block;
+}
+
+.field__label--with-icon .info-tooltip .info-desc {
+  left: 0;
+  transform: none;
+}
+
+.field__label--with-icon .info-tooltip .info-desc::after {
+  left: 20px;
+  transform: rotate(45deg);
 }
 
 /* ---------- btnarea (531 x 51) ---------- */
