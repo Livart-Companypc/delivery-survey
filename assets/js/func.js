@@ -159,15 +159,41 @@
     }
   }
 
+  function getCharByteLength(char) {
+    return char.charCodeAt(0) > 127 ? 2 : 1;
+  }
+
+  function truncateByByteLength(str, maxBytes) {
+    var bytes = 0;
+    var result = "";
+
+    for (var i = 0; i < str.length; i++) {
+      var char = str.charAt(i);
+      var charBytes = getCharByteLength(char);
+
+      if (bytes + charBytes > maxBytes) {
+        break;
+      }
+
+      bytes += charBytes;
+      result += char;
+    }
+
+    return result;
+  }
+
   function initMemoTextarea() {
     var memo = document.querySelector(".memo-textarea");
     if (!memo) return;
 
-    memo.setAttribute("maxlength", "50");
+    var maxBytes = 100;
+
+    memo.setAttribute("maxlength", String(maxBytes));
 
     memo.addEventListener("input", function () {
-      if (memo.value.length > 50) {
-        memo.value = memo.value.slice(0, 50);
+      var truncated = truncateByByteLength(memo.value, maxBytes);
+      if (memo.value !== truncated) {
+        memo.value = truncated;
       }
     });
   }

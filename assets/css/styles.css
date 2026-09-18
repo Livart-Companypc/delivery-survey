@@ -65,7 +65,7 @@ ul {
   }
 }
 
-/* 공통 영역 사이즈: 531 x auto */
+/* 공통 영역 사이즈: 530 x auto */
 .hero,
 .survey1,
 .survey2,
@@ -139,7 +139,8 @@ ul {
   width: 100%;
   min-height: 44px;
   padding: 0 14px;
-  border: none;
+  background-color: #fff;
+  border: 1px solid #dddddd;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -186,7 +187,7 @@ ul {
   white-space: nowrap;
 }
 
-/* ---------- hero (531 x 229) ---------- */
+/* ---------- hero (530 x 229) ---------- */
 .hero {
   align-items: center;
   height: 229px;
@@ -231,14 +232,14 @@ ul {
   color: #999999;
 }
 
-/* ---------- survey1 (531 x 262) ---------- */
+/* ---------- survey1 (530 x 262) ---------- */
 .survey1 {
   min-height: 262px;
   margin-bottom: 21px;
   padding-top: 4px;
 }
 
-/* ---------- survey2 (531 x 500) ---------- */
+/* ---------- survey2 (530 x 500) ---------- */
 .survey2 {
   min-height: 500px;
   margin-bottom: 32px;
@@ -312,7 +313,7 @@ ul {
   border: 1px solid #333333;
 }
 
-/* ---------- survey3 (531 x 257) ---------- */
+/* ---------- survey3 (530 x 257) ---------- */
 .survey3 {
   min-height: 257px;
   margin-bottom: 17px;
@@ -362,7 +363,7 @@ ul {
   z-index: 1;
 }
 
-/* ---------- survey4 (531 x 225) ---------- */
+/* ---------- survey4 (530 x 225) ---------- */
 .survey4 {
   min-height: 225px;
   margin-bottom: 50px;
@@ -460,7 +461,7 @@ ul {
   transform: rotate(45deg);
 }
 
-/* ---------- btnarea (531 x 51) ---------- */
+/* ---------- btnarea (530 x 51) ---------- */
 .btnarea {
   height: 51px;
   margin-bottom: 22px;
@@ -471,8 +472,8 @@ ul {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 531px;
-  height: 51px;
+  max-width: 530px;
+  height: 50px;
   background-color: #333333;
   color: #ffffff;
   font-size: 16px;
@@ -480,7 +481,7 @@ ul {
   letter-spacing: -0.32px;
 }
 
-/* ---------- infoarea (531 x 69) ---------- */
+/* ---------- infoarea (530 x 69) ---------- */
 .infoarea {
   min-height: 69px;
   justify-content: center;
