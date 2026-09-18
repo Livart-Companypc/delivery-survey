@@ -491,6 +491,7 @@ ul {
   white-space: pre-line;
   text-align: left;
   pointer-events: none;
+  word-break: keep-all;
 }
 
 .info-desc::after {
@@ -589,8 +590,9 @@ ul {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 360px;
-  height: 740px;
+  min-width: 320px;
+  max-width: 530px;
+  height: 100vh;
   max-height: 100%;
   background-color: #ffffff;
 }

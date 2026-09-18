@@ -96,7 +96,8 @@
     var tooltipConfigs = [
       {
         selector: ".survey2 h2.section-title--with-icon .icon-info",
-        message: "도서산간 지역은 배송시간이 추가 협의 될 수 있습니다.",
+        message:
+          "도서산간 지역은 배송시간이 추가 협의 될 수 있습니다.\n당사 사정으로 인해 희망배송일이 지연될 수 있습니다.\n배송지와 희망 배송일은 1개만 선택하실 수 있습니다.",
       },
       {
         selector: ".survey2 .field__label--with-icon .icon-info",
@@ -105,7 +106,8 @@
       },
       {
         selector: ".survey3 h2.section-title--with-icon .icon-info",
-        message: "상품 배송 후 설치될 공간을 미리 확보해 주셔야 합니다.",
+        message:
+          "상품 배송 후 설치될 공간을 미리 확보해 주셔야 합니다.\n(기존 가구 처분이 별도로 필요할 경우 폐가구 내림 서비스 신청)\n3층 이상의 건물, 계단 폭 2m 미만, 엘리베이터가 없는 경우 등 주거 환경 따라 이동 불가능할 경우 진입 장비 비용이 추가 발생될 수 있습니다.\n(배송 후 현지에서 사다리차 거부 시 반품비가 발생될 수 있습니다.)",
       },
     ];
 
@@ -127,11 +129,7 @@
       ]
         .map(function (option) {
           return (
-            '<option value="' +
-            option.value +
-            '">' +
-            option.label +
-            "</option>"
+            '<option value="' + option.value + '">' + option.label + "</option>"
           );
         })
         .join("");
@@ -147,11 +145,7 @@
       ]
         .map(function (option) {
           return (
-            '<option value="' +
-            option.value +
-            '">' +
-            option.label +
-            "</option>"
+            '<option value="' + option.value + '">' + option.label + "</option>"
           );
         })
         .join("");
