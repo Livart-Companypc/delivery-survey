@@ -264,7 +264,9 @@
       <div class="popup__panel">
         <div class="popup__header">
           <div class="popup__header-side" aria-hidden="true"></div>
-          <h2 id="popup-title" class="popup__title">배송일 지정 관련 안내</h2>
+          <h2 id="popup-title" class="popup__title">
+            폐가구 무료 내림서비스 신청
+          </h2>
           <div class="popup__header-side popup__header-side--end">
             <button type="button" class="popup__close" aria-label="닫기">
               ×
@@ -273,18 +275,105 @@
         </div>
         <div class="popup__body">
           <section class="service-item-lists" aria-label="service-item-lists">
-            <span class="wire-label">service-item-lists</span>
+            <div class="service-item-lists__head">
+              <span class="service-item-lists__col service-item-lists__col--no"
+                >no.</span
+              >
+              <span
+                class="service-item-lists__col service-item-lists__col--name"
+                >상품명</span
+              >
+              <span
+                class="service-item-lists__col service-item-lists__col--group"
+                >제품군</span
+              >
+            </div>
+            <div class="service-item">
+              <div class="service-item__row">
+                <span class="service-item__no">1.</span>
+                <span class="service-item__name"
+                  >리르 소파 천연가죽 일반형 일반형 4인 오션리지그레이샌드</span
+                >
+                <span class="service-item__group">소파</span>
+              </div>
+              <div class="service-item__option">
+                <p class="service-item__option-label">4인용 이상</p>
+                <div class="service-item__qty">
+                  <div class="qty-control" role="group" aria-label="수량">
+                    <button type="button" class="qty-control__btn" aria-label="감소">
+                      −
+                    </button>
+                    <span class="qty-control__value">0</span>
+                    <button type="button" class="qty-control__btn" aria-label="증가">
+                      +
+                    </button>
+                  </div>
+                  <span class="service-item__unit">EA</span>
+                </div>
+              </div>
+            </div>
           </section>
           <section
             class="service-item-notice"
             aria-label="service-item-notice"
           >
-            <span class="wire-label">service-item-notice</span>
+            <h3 class="service-item-notice__title">유의사항</h3>
+            <ol class="service-item-notice__list">
+              <li>
+                본 서비스는 리바트 공식 온라인몰(리바트몰) 및 리바트 오프라인
+                매장에서 제품을 구매하신 고객님을 대상으로 제공되는
+                전용서비스입니다. 입점몰에서 구매하신 고객님께는 본 서비스가
+                제공되지 않는 점 양해 부탁드립니다.
+              </li>
+              <li>
+                폐가구 무료 내림 서비스는 폐기장(1층)까지 이동을 말하며, 회수
+                및 폐기는 불가합니다.
+              </li>
+              <li>
+                신규 구매 제품 설치 위치와 동일한 공간에 한하여 서비스를
+                제공합니다.
+              </li>
+              <li>
+                구매하신 동일 품목, 동일 수량에 한하여 폐가구 내림 서비스를
+                제공합니다.
+              </li>
+              <li>
+                사전 신청하지 않을 시 배송 3일 전까지 고객센터를 통해 접수
+                가능하며, 그 이후에는 서비스 접수 불가합니다.
+              </li>
+              <li>
+                안마의자, 돌침대 등 고중량 제품은 서비스 제공이 어렵습니다.
+              </li>
+              <li>사전에 폐기물 스티커를 미리 준비해 주시기 바랍니다.</li>
+              <li>
+                사다리차 비용, 3층 이상 계단 이동 등 추가 비용이 발생할 경우
+                해당 비용은 고객님께서 부담하셔야 합니다.
+              </li>
+              <li>
+                장롱 및 붙박이장은 내용물이 비어있는 단독 장롱(구매 수량
+                기준)에 한하여 해체 후 폐가구 내림 서비스를 제공합니다.
+              </li>
+              <li>
+                단, 필러나 마감 부위에 실리콘 또는 접착제 시공이 되어 있거나,
+                빌트인 타입처럼 해체 난이도가 높아 벽체 손상이 우려되는
+                경우에는 서비스가 제공되지 않습니다.
+              </li>
+              <li>
+                동일 품목 외에 인테리어 성격의 설치 품목(벽 선반, 벽체 타일,
+                몰딩, 파티션 등)이나 부분 철거가 필요한 상품은 내림 서비스를
+                이용하실 수 없습니다.
+              </li>
+            </ol>
           </section>
         </div>
         <div class="popup__footer">
-          <section class="btnarea" aria-label="btnarea">
-            <span class="wire-label">btnarea</span>
+          <section class="btnarea popup__btnarea" aria-label="btnarea">
+            <button type="button" class="popup__btn popup__btn--cancel">
+              취소
+            </button>
+            <button type="button" class="popup__btn popup__btn--save">
+              저장
+            </button>
           </section>
         </div>
       </div>
