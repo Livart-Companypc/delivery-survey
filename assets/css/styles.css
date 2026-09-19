@@ -648,6 +648,21 @@ ul {
   overflow-y: auto;
 }
 
+/* popup body/footer wireframe — 531 x auto */
+.popup__body .service-item-lists,
+.popup__body .service-item-notice,
+.popup__footer .btnarea {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 531px;
+  height: auto;
+}
+
+.popup__footer .btnarea {
+  margin-bottom: 0;
+}
+
 .popup__headline {
   font-size: 15px;
   font-weight: 700;
@@ -673,8 +688,10 @@ ul {
 
 .popup__footer {
   display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   width: 100%;
+  align-items: center;
 }
 
 .popup__confirm {
