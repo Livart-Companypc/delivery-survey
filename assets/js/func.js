@@ -43,32 +43,49 @@
     wrap.appendChild(tooltip);
 
     icon.setAttribute("tabindex", "0");
-    icon.setAttribute("aria-describedby", tooltip.id || undefined);
+    icon.setAttribute("role", "button");
+    icon.setAttribute("aria-expanded", "false");
 
     var pinned = false;
+    var hovering = false;
+    var dismissUntilLeave = false;
 
-    function show() {
-      wrap.classList.add("info-tooltip--active");
+    function syncVisibility() {
+      var visible = pinned || (hovering && !dismissUntilLeave);
+      wrap.classList.toggle("info-tooltip--active", visible);
+      icon.setAttribute("aria-expanded", visible ? "true" : "false");
     }
 
     function hide() {
       pinned = false;
-      wrap.classList.remove("info-tooltip--active");
+      hovering = false;
+      dismissUntilLeave = false;
+      syncVisibility();
     }
 
-    wrap.addEventListener("mouseenter", show);
+    wrap.addEventListener("mouseenter", function () {
+      hovering = true;
+      syncVisibility();
+    });
+
     wrap.addEventListener("mouseleave", function () {
-      if (!pinned) {
-        wrap.classList.remove("info-tooltip--active");
-      }
+      hovering = false;
+      dismissUntilLeave = false;
+      syncVisibility();
     });
 
     icon.addEventListener("click", function (event) {
       event.preventDefault();
       event.stopPropagation();
       guardAction(function () {
-        pinned = !pinned;
-        wrap.classList.toggle("info-tooltip--active", pinned);
+        if (pinned) {
+          pinned = false;
+          dismissUntilLeave = true;
+        } else {
+          pinned = true;
+          dismissUntilLeave = false;
+        }
+        syncVisibility();
       });
     });
 
@@ -76,8 +93,14 @@
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         guardAction(function () {
-          pinned = !pinned;
-          wrap.classList.toggle("info-tooltip--active", pinned);
+          if (pinned) {
+            pinned = false;
+            dismissUntilLeave = true;
+          } else {
+            pinned = true;
+            dismissUntilLeave = false;
+          }
+          syncVisibility();
         });
       }
       if (event.key === "Escape") {
@@ -87,7 +110,8 @@
 
     document.addEventListener("click", function (event) {
       if (!wrap.contains(event.target)) {
-        hide();
+        pinned = false;
+        syncVisibility();
       }
     });
   }
@@ -219,12 +243,86 @@
     });
   }
 
+  function hideAllPopups() {
+    var popups = document.querySelectorAll(".popup");
+    popups.forEach(function (popup) {
+      popup.classList.remove("is-open");
+      popup.setAttribute("aria-hidden", "true");
+    });
+  }
+
+  function showPopup(popup) {
+    if (!popup) return;
+    popup.classList.add("is-open");
+    popup.setAttribute("aria-hidden", "false");
+  }
+
+  function initPopups() {
+    hideAllPopups();
+
+    document
+      .querySelectorAll(".popup__close, .popup__btn--cancel, .popup__btn--save")
+      .forEach(function (button) {
+        button.addEventListener("click", function () {
+          guardAction(function () {
+            hideAllPopups();
+          });
+        });
+      });
+
+    var extraWork = document.getElementById("extra-work");
+    var popupExtraWork = document.getElementById("popup-extra-work");
+    if (!extraWork || !popupExtraWork) return;
+
+    extraWork.addEventListener("change", function () {
+      guardAction(function () {
+        if (extraWork.value === "furniture-removal") {
+          showPopup(popupExtraWork);
+        }
+      });
+    });
+  }
+
+  function initQtyControls() {
+    document.querySelectorAll(".qty-control").forEach(function (control) {
+      var valueEl = control.querySelector(".qty-control__value");
+      var buttons = control.querySelectorAll(".qty-control__btn");
+      if (!valueEl || buttons.length < 2) return;
+
+      var decreaseBtn = buttons[0];
+      var increaseBtn = buttons[1];
+
+      function getValue() {
+        var parsed = parseInt(valueEl.textContent, 10);
+        return isNaN(parsed) ? 0 : parsed;
+      }
+
+      function setValue(next) {
+        valueEl.textContent = String(Math.max(0, next));
+      }
+
+      decreaseBtn.addEventListener("click", function () {
+        guardAction(function () {
+          setValue(getValue() - 1);
+        });
+      });
+
+      increaseBtn.addEventListener("click", function () {
+        guardAction(function () {
+          setValue(getValue() + 1);
+        });
+      });
+    });
+  }
+
   function init() {
     initAddressEditButton();
     initTooltips();
     initSelectOptions();
     initMemoTextarea();
     initDeliveryDateInput();
+    initPopups();
+    initQtyControls();
   }
 
   if (document.readyState === "loading") {

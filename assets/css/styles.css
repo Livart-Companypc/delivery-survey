@@ -507,8 +507,7 @@ ul {
   border-bottom: 1px solid #dddddd;
 }
 
-.info-tooltip--active .info-desc,
-.info-tooltip:hover .info-desc {
+.info-tooltip--active .info-desc {
   display: block;
 }
 
