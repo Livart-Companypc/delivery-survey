@@ -198,13 +198,13 @@
         <div class="field">
           <label class="field__label field__label--with-icon" for="extra-work">
             추가 작업
-            <img
+            <!-- <img
               class="icon-info"
               src="assets/svg/i.svg"
               alt=""
               width="22"
               height="22"
-            />
+            /> -->
           </label>
           <div class="select-wrap">
             <select id="extra-work" class="select-wrap__select">
@@ -255,9 +255,11 @@
         </ul>
       </section>
     </main>
+
+    <!-- popup-extra-work -->
     <div
       id="popup-extra-work"
-      class="popup"
+      class="popup full"
       role="dialog"
       aria-modal="true"
       aria-labelledby="popup-title"
@@ -325,12 +327,6 @@
             <h3 class="service-item-notice__title">유의사항</h3>
             <ol class="service-item-notice__list">
               <li>
-                본 서비스는 리바트 공식 온라인몰(리바트몰) 및 리바트 오프라인
-                매장에서 제품을 구매하신 고객님을 대상으로 제공되는
-                전용서비스입니다. 입점몰에서 구매하신 고객님께는 본 서비스가
-                제공되지 않는 점 양해 부탁드립니다.
-              </li>
-              <li>
                 폐가구 무료 내림 서비스는 폐기장(1층)까지 이동을 말하며, 회수 및
                 폐기는 불가합니다.
               </li>
@@ -383,6 +379,100 @@
         </div>
       </div>
     </div>
+
+    <!-- popup-confirm: 배송확정 팝업 -->
+    <div id="popup-confirm" class="popup">
+      <div class="popup__panel">
+        <div class="popup__header">
+          <div class="popup__header-side" aria-hidden="true"></div>
+          <h2 class="popup__title">배송확정</h2>
+          <!-- <div class="popup__header-side popup__header-side--end">
+            <button type="button" class="popup__close" aria-label="닫기">
+              ×
+            </button>
+          </div> -->
+        </div>
+        <div class="popup__body">
+          <section class="service-item-notice" aria-label="service-item-notice">
+            <h3 class="service-item-notice__title">
+              배송정보를 확정하시겠습니까?
+            </h3>
+          </section>
+        </div>
+        <div class="popup__footer">
+          <section class="btnarea popup__btnarea" aria-label="btnarea">
+            <button type="button" class="popup__btn popup__btn--cancel">
+              취소
+            </button>
+            <button type="button" class="popup__btn popup__btn--save">
+              확정
+            </button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup-confirmed: 배송확정완료 팝업 -->
+    <div id="popup-confirmed" class="popup">
+      <div class="popup__panel">
+        <div class="popup__header">
+          <div class="popup__header-side" aria-hidden="true"></div>
+          <h2 class="popup__title">배송확정완료</h2>
+          <!-- <div class="popup__header-side popup__header-side--end">
+            <button type="button" class="popup__close" aria-label="닫기">
+              ×
+            </button>
+          </div> -->
+        </div>
+        <div class="popup__body">
+          <section class="service-item-notice" aria-label="service-item-notice">
+            <h3 class="service-item-notice__title">
+              배송정보가 확정 되었습니다.
+            </h3>
+          </section>
+        </div>
+        <div class="popup__footer">
+          <section class="btnarea popup__btnarea" aria-label="btnarea">
+            <button type="button" class="popup__btn popup__btn--save">
+              확인
+            </button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup-dayofweek: 요일배송제 안내 팝업 -->
+    <div id="popup-dayofweek" class="popup full">
+      <div class="popup__panel">
+        <div class="popup__header">
+          <div class="popup__header-side" aria-hidden="true"></div>
+          <h2 class="popup__title">요일배송제</h2>
+          <!-- <div class="popup__header-side popup__header-side--end">
+            <button type="button" class="popup__close" aria-label="닫기">
+              ×
+            </button>
+          </div> -->
+        </div>
+        <div class="popup__body">
+          <section class="service-item-notice" aria-label="service-item-notice">
+            <h3 class="service-item-notice__title">
+              배송정보를 확정하시겠습니까?
+            </h3>
+          </section>
+        </div>
+        <div class="popup__footer">
+          <section class="btnarea popup__btnarea" aria-label="btnarea">
+            <button type="button" class="popup__btn popup__btn--cancel">
+              취소
+            </button>
+            <button type="button" class="popup__btn popup__btn--save">
+              확정
+            </button>
+          </section>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/func.js"></script>
   </body>
 </html>

@@ -584,16 +584,25 @@ ul {
 .popup.is-open {
   display: flex;
 }
-
 .popup__panel {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 320px;
   max-width: 530px;
+  height: auto;
+  /* max-height: 100%; */
+  background-color: #ffffff;
+}
+.popup.full .popup__panel {
+  /* display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 320px;
+  max-width: 530px; */
   height: 100vh;
   max-height: 100%;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .popup__header {
