@@ -260,27 +260,113 @@
   function initPopups() {
     hideAllPopups();
 
-    document
-      .querySelectorAll(".popup__close, .popup__btn--cancel, .popup__btn--save")
-      .forEach(function (button) {
-        button.addEventListener("click", function () {
+    var popupConfirm = document.getElementById("popup-confirm");
+    var popupConfirmed = document.getElementById("popup-confirmed");
+    var popupDayofweek = document.getElementById("popup-dayofweek");
+    var popupExtraWork = document.getElementById("popup-extra-work");
+
+    var btnConfirm = document.querySelector(".page .btn-confirm");
+    if (btnConfirm) {
+      btnConfirm.addEventListener("click", function () {
+        guardAction(function () {
+          hideAllPopups();
+          showPopup(popupConfirm);
+        });
+      });
+    }
+
+    if (popupConfirm) {
+      var confirmSaveBtn = popupConfirm.querySelector(".popup__btn--save");
+      if (confirmSaveBtn) {
+        confirmSaveBtn.addEventListener("click", function () {
+          guardAction(function () {
+            hideAllPopups();
+            showPopup(popupConfirmed);
+          });
+        });
+      }
+
+      var confirmCancelBtn = popupConfirm.querySelector(".popup__btn--cancel");
+      if (confirmCancelBtn) {
+        confirmCancelBtn.addEventListener("click", function () {
           guardAction(function () {
             hideAllPopups();
           });
         });
+      }
+    }
+
+    if (popupConfirmed) {
+      var confirmedSaveBtn = popupConfirmed.querySelector(".popup__btn--save");
+      if (confirmedSaveBtn) {
+        confirmedSaveBtn.addEventListener("click", function () {
+          guardAction(function () {
+            hideAllPopups();
+          });
+        });
+      }
+    }
+
+    var infoareaIcon = document.querySelector(".infoarea img[src*='i.svg']");
+    if (infoareaIcon) {
+      infoareaIcon.setAttribute("role", "button");
+      infoareaIcon.setAttribute("tabindex", "0");
+      infoareaIcon.addEventListener("click", function (event) {
+        event.preventDefault();
+        guardAction(function () {
+          showPopup(popupDayofweek);
+        });
       });
-
-    var extraWork = document.getElementById("extra-work");
-    var popupExtraWork = document.getElementById("popup-extra-work");
-    if (!extraWork || !popupExtraWork) return;
-
-    extraWork.addEventListener("change", function () {
-      guardAction(function () {
-        if (extraWork.value === "furniture-removal") {
-          showPopup(popupExtraWork);
+      infoareaIcon.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          guardAction(function () {
+            showPopup(popupDayofweek);
+          });
         }
       });
+    }
+
+    document.querySelectorAll(".popup .popup__close").forEach(function (button) {
+      button.addEventListener("click", function () {
+        guardAction(function () {
+          hideAllPopups();
+        });
+      });
     });
+
+    var extraWork = document.getElementById("extra-work");
+    if (extraWork && popupExtraWork) {
+      extraWork.addEventListener("change", function () {
+        guardAction(function () {
+          if (extraWork.value === "furniture-removal") {
+            showPopup(popupExtraWork);
+          }
+        });
+      });
+
+      popupExtraWork
+        .querySelectorAll(".popup__btn--cancel, .popup__btn--save")
+        .forEach(function (button) {
+          button.addEventListener("click", function () {
+            guardAction(function () {
+              hideAllPopups();
+            });
+          });
+        });
+    }
+
+    if (popupDayofweek) {
+      popupDayofweek
+        .querySelectorAll(".popup__btn--cancel, .popup__btn--save")
+        .forEach(function (button) {
+          button.addEventListener("click", function () {
+            guardAction(function () {
+              hideAllPopups();
+            });
+          });
+        });
+    }
   }
 
   function initQtyControls() {

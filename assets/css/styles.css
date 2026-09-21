@@ -832,14 +832,16 @@ ul {
   display: flex;
   align-items: center;
   width: 100%;
-  padding-bottom: 12px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #eeeeee;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.3px;
   line-height: 1.4;
   color: #111111;
+}
+.service-item-notice__title + .service-item-notice__list {
+  border-top: 1px solid #eeeeee;
+  margin-top: 16px;
+  padding-top: 12px;
 }
 
 .service-item-notice__list {
