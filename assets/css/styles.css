@@ -561,10 +561,10 @@ ul {
   color: #666666;
 }
 
-.info-list__item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.infoarea .info-list__item .icon-info {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
 }
 
 /* ---------- popup (360 x 740, page overlay) ---------- */
